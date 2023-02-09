@@ -1,127 +1,90 @@
+<?php
+//---------------------------------------------------
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> Test de page PHP </h1>
-    <p> Petit paragraphe pour combler cette page blanche car j'ai besoin de remplir l'espace vide. </p>
-    <?php echo "Ceci est écrit avec du PHP" ; echo date("d/m/Y h:i:s");?> <br>
-    <br>
-    <?php 
-    $userAge = 17;
-    $userMail = "coucou.salut@gmail.com";
-    $userName = " Tom Dupont";
-    echo $userName;
-    echo $userMail;?>
-    <br><br>
+// function degres($c){
+//     $f=(9*$c/5)+32;
+//     return $f;
+// }
+
+//  echo degres(22);
+
+//---------------------------------------------------
+
+
+
+// function jour($sec){
+//     $jours = floor($sec/86400);
+//     $heures = floor(($sec%86400)/3600);
+//     $minutes = floor((($sec%86400)%3600)/60);
+//     $secondes = $sec%60;
+
+//     return "<p> ".$jours." jours / ". $heures."heures / " .$minutes."minutes / " .$secondes. "secondes</p>";
+// }
+
+// echo jour(283623);
+
+
+//---------------------------------------------------
+
+// function bissextiles($annee){
+//     if ($annee%4==0 && $annee%100!=0 || $annee%400==0){
+//         return TRUE;
+//     } else {
+//         return FALSE;
+//     }
+// }
+
+// echo bissextiles(2023);
+
+
+//---------------------------------------------------
+
+// for ($i = 0; $i <= 10; $i++){
+//     echo "<table><tr>".$i."</tr>";
+// }
+// for ($j = 0; $j <= 10; $j++){
+//     echo "<td>".$j."</td></table>";
+// }
+
+
+
+
+/*
+?>
+<table border="1">
     <?php
-    
-    echo "Hello $userName et bienvenue sur le site !";
-    echo 'hello'.$userName.' et bienvenue sur le site !'; //ok
+     for ($i = 1; $i <= 10; $i++) {
+         echo "<tr>";
+        for ($j = 1; $j <= 10; $j++) {
+             $num = 10 * ($i - 1) + $j;
+            echo "<td>$num</td>";
+         }
+         echo "</tr>";
+     }
+     ?>
+ </table>
+*/
 
-    ?> 
-    <?php
-$isEnabled = true;
 
-if ($isEnabled == true) {
-    echo "Vous êtes autorisé(e) à accéder au site ✅";
+
+echo "<p> salut</p>";
+
+$escalope = [
+    'title' => 'Escalope milanaise',
+    'recipe' => '',
+    'author' => 'mathieu.nebra@exemple.com',
+    'is_enabled' => true,
+];
+
+
+function nameUser($recette){
+    foreach($recette AS $clefs => $valeur){
+        echo "<p>".$recette['author']." est l'auteur de la recette ".$recette['title']."</p>";
+    }
 }
-else {
-    echo "Accès refusé ❌ ";
-}
-?> <br><br>
 
-<?php
-$grade = 16;
+nameUser($escalope);
 
-switch ($grade) // on indique sur quelle variable on travaille
-{ 
-    case 0: // dans le cas où $grade vaut 0
-        echo "Tu es vraiment un gros nul !!!";
-    break;
-    
-    case 5: // dans le cas où $grade vaut 5
-        echo "Tu es très mauvais";
-    break;
-    
-    case 7: // dans le cas où $grade vaut 7
-        echo "Tu es mauvais";
-    break;
-    
-    case 10: // etc. etc.
-        echo "Tu as pile poil la moyenne, c'est un peu juste…";
-    break;
-    
-    case 12:
-        echo "Tu es assez bon";
-    break;
-    
-    case 16:
-        echo "Tu te débrouilles très bien !";
-    break;
-    
-    case 20:
-        echo "Excellent travail, c'est parfait !";
-    break;
-    
-    default:
-        echo "Désolé, je n'ai pas de message à afficher pour cette note";
-}
+
+echo ("<h2>".date('l jS \of F Y h:i:s A')."</h2>");
 ?>
-
-<?php
-$age = 32 ;
-
-if ($age >= 18) {
-    $adult = true ; 
-}
-else {
-    $adult = false ;    
-}
-?>
-<br><br>
-
-<!-- les tableaux -->
-
-<?php
-
-$user1 = ['Mériadec Dap', 'email', 'secret', 34];
-    
-echo $user1[0];
-echo $user1[1];
-echo $user1[3];
-
-?>
-
-<!-- les boucles -->
-<?php
-
-$line = 1;
-
-while ($line <= 10){
-    echo 'je ne dois pas discuter en classe.<br />'; 
-    $line = $line + 1;
-}
-
-?>
-
-<?php
-$line = 1;
-
-while ($line <= 10){
-    echo 'Ceci est la ligne n°'. $line . '<br />'; 
-    $line = $line + 1;
-}
-
-
-
-?>
-?>
-
-</body>
-</html>
